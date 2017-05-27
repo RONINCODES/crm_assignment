@@ -18,8 +18,6 @@ class Contact
     @note = note
     @id = @@id
     @@id += 1
-
-
   end
 
 
@@ -34,21 +32,16 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-  @@contacts
+    @@contacts
   end
 
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find(id)
     @@contacts.each do |contact|
-        return contact if contact.id == id
-      end
+      return contact if contact.id == id
     end
-
-
-
-
-
+  end
 
   # This method should allow you to specify
   # 1. which of the contact's attributes you want to update
@@ -69,19 +62,60 @@ class Contact
 
 
 
-  
+
 
   # This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
-  def self.find_by
+  def self.find_by(attribute, value)
+    if attribute == "first_name"
+      @@contacts.each do |contact|
+        if value == contact.first_name
+          return contact
+        end
+      end
+      nil
+    end
 
+
+    if attribute == "last_name"
+      @@contacts.each do |contact|
+        if value == contact.last_name
+          return contact
+        end
+      end
+      nil
+    end
+
+
+
+    if attribute == "email"
+      @@contacts.each do |contact|
+        if value == contact.email
+          return contact
+        end
+      end
+      nil
+    end
+
+
+    if attribute == "note"
+      @@contacts.each do |contact|
+        if value == contact.note
+          return contact
+        end
+      end
+      nil
+    end
   end
+
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contacts.each do |contact|
+      @@contacts.delete(contact)
+    end
   end
 
   def full_name
@@ -104,9 +138,9 @@ end
 
 
 ######################CRM OUTPUTS#############
-Contact.create("Betty", "Maker", "bettymakesgmail.com", "Loves Pokemon")
-ronen = Contact.create("Ronen", "Annason", "Ronengmail.com", "Loves pizza")
-Contact.create("jon", "kim", "jk@gmail.com", "burritos")
+#Contact.create("Betty", "Maker", "bettymakesgmail.com", "Loves Pokemon")
+#ronen = Contact.create("Ronen", "Annason", "Ronengmail.com", "Loves pizza")
+#Contact.create("jon", "kim", "jk@gmail.com", "burritos")
 
-Contact.all
-ronen.full_name
+#Contact.all
+#ronen.full_name
