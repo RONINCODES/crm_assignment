@@ -7,6 +7,7 @@ class Contact
 @@id = 1
 @id = @@id
 @@id += 1
+
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note)
     @first_name = first_name
@@ -27,7 +28,7 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-
+  puts  @@contacts
   end
 
   # This method should accept an id as an argument
@@ -58,7 +59,7 @@ class Contact
   end
 
   def full_name
-
+    "#{first_name} #{last_name}"
   end
 
   # This method should delete the contact
@@ -79,3 +80,4 @@ end
 ######################CRM OUTPUTS#############
 contact = Contact.new("Betty", "Maker", "bettymakesgmail.com", "Loves Pokemon")
 puts contact.first_name
+puts contact.full_name
