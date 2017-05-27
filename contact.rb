@@ -6,7 +6,7 @@ class Contact
 
 @@contacts = []
 
-@@next_id = 1
+@@id = 1
 
 
 
@@ -16,9 +16,10 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
-    @id = @@next_id
+    @id = @@id
+    @@id += 1
 
-    @@next_id += 1
+
   end
 
 
@@ -43,7 +44,7 @@ class Contact
         return contact if contact.id == id
       end
     end
-  
+
 
 
 
@@ -53,9 +54,22 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(attribute_to_update, value)
+    case attribute_to_update
+    when "first_name"
+      self.first_name = value
+    when "last_name"
+      self.last_name = value
+    when "email"
+      self.email = value
+    when "note"
+      self.note = value
+    end
   end
+
+
+
+  
 
   # This method should work similarly to the find method above
   # but it should allow you to search for a contact using attributes other than id
