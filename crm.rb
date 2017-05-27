@@ -75,11 +75,20 @@ class CRM
     puts "Please enter the ID associated with the contact you would like to delete: "
     identification = gets.chomp
     contact_to_delete = Contact.find_by("id", identification)
+    contact_to_delete.delete
   end
 
   def display_all_contacts
-
+    puts "List of Contacts"
+    Contact.all.each do |contact|
+      puts "#{contact.first_name} #{contact.last_name} #{contact.email} #{contact.note}"
+    end
   end
+
+
+
+
+
 
   def search_by_attribute
 
