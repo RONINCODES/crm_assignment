@@ -36,7 +36,7 @@ class CRM
   end
 
 
-  
+
 
   def add_new_contact
     print "Enter First Name: "

@@ -1,9 +1,11 @@
+
 class Contact
   attr_reader :id
   attr_accessor :first_name, :last_name, :email, :note
 
 
 @@contacts = []
+
 @@id = 1
 @id = @@id
 @@id += 1
@@ -23,12 +25,12 @@ class Contact
   def self.create(first_name, last_name, email, note)
     new_contact = Contact.new(first_name, last_name, email, note)
     @@contacts << new_contact
-    return new _contact
+    new_contact
   end
 
   # This method should return all of the existing contacts
   def self.all
-  puts  @@contacts
+  @@contacts
   end
 
   # This method should accept an id as an argument
@@ -78,6 +80,9 @@ end
 
 
 ######################CRM OUTPUTS#############
-contact = Contact.new("Betty", "Maker", "bettymakesgmail.com", "Loves Pokemon")
-puts contact.first_name
-puts contact.full_name
+Contact.create("Betty", "Maker", "bettymakesgmail.com", "Loves Pokemon")
+ronen = Contact.create("Ronen", "Annason", "Ronengmail.com", "Loves pizza")
+Contact.create("jon", "kim", "jk@gmail.com", "burritos")
+
+Contact.all
+ronen.full_name
