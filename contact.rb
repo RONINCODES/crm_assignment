@@ -6,9 +6,9 @@ class Contact
 
 @@contacts = []
 
-@@id = 1
-@id = @@id
-@@id += 1
+@@next_id = 1
+
+
 
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note)
@@ -16,6 +16,9 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
+    @id = @@next_id
+
+    @@next_id += 1
   end
 
 
@@ -35,9 +38,16 @@ class Contact
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
+  def self.find(id)
+    @@contacts.each do |contact|
+        return contact if contact.id == id
+      end
+    end
+  
 
-  end
+
+
+
 
   # This method should allow you to specify
   # 1. which of the contact's attributes you want to update
