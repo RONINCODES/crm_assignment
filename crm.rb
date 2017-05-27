@@ -86,11 +86,11 @@ class CRM
   end
 
 
-
-
-
-
   def search_by_attribute
+    puts "Which Attribute would you like to search by? "
+    attribute = gets.chomp
+    attribute_search = Contact.find_by(attribute)
+    puts "#{attribute_search}"
 
   end
 
