@@ -3,7 +3,9 @@ require_relative 'contact'
 
 class CRM
 
-  def initialize
+  def initialize(name)
+    @name = name
+    puts "This CRM is called" +@name
 
   end
 
@@ -69,12 +71,10 @@ class CRM
     contact_tomodify.update(attribute, value)
   end
 
-
-
-  
-
   def delete_contact
-
+    puts "Please enter the ID associated with the contact you would like to delete: "
+    identification = gets.chomp
+    contact_to_delete = Contact.find_by("id", identification)
   end
 
   def display_all_contacts
