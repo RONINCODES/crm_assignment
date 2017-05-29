@@ -12,7 +12,7 @@ class Contact < ActiveRecord::Base
   field :email,      as: :string
   field :note,       as: :text
 
-  
+
   # attr_reader :id
   # attr_accessor :first_name, :last_name, :email, :note
 
@@ -142,6 +142,12 @@ class Contact < ActiveRecord::Base
   # end
 
   # Feel free to add other methods here, if you need them.
+end
+
+Contact.auto_upgrade!
+
+at_exit do
+  ActiveRecord::Base.connection.close
 end
 
 
