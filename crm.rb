@@ -95,6 +95,7 @@ class CRM
   end
 
   def exit
+    exit
   end
 
 
