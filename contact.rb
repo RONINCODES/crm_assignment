@@ -43,6 +43,8 @@ class Contact < ActiveRecord::Base
   #   new_contact
   # end
 
+
+
   # This method should return all of the existing contacts
   # def self.all
   #   @@contacts

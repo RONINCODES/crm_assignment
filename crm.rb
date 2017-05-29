@@ -53,7 +53,14 @@ class CRM
     print "Enter a Note: "
     note = gets.chomp
 
-    Contact.create(first_name, last_name, email, note)
+    contact = Contact.create(
+    first_name: first_name,
+    last_name:  last_name,
+    email:      email,
+    note:       note
+    )
+
+    # Contact.create(first_name, last_name, email, note)
   end
 
   def modify_existing_contact
@@ -101,3 +108,5 @@ class CRM
 
 
 end
+
+contact = Contact.create(first_name: "bob", last_name: "Cat", email: "gmail",note: "love")
