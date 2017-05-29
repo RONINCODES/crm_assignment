@@ -44,7 +44,6 @@ class Contact < ActiveRecord::Base
   # end
 
 
-
   # This method should return all of the existing contacts
   # def self.all
   #   @@contacts
@@ -145,6 +144,7 @@ class Contact < ActiveRecord::Base
 
   # Feel free to add other methods here, if you need them.
 end
+
 
 Contact.auto_upgrade!
 
